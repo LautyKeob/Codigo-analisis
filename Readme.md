@@ -1,4 +1,84 @@
+Descargador de Páginas Web
+
+Este script de Python te permite descargar el contenido de una o varias URLs y guardarlo como archivos en tu sistema local. Es útil para recopilar información de páginas web de forma automatizada, actuando de manera "amigable" con los servidores.
+
+Características Principales
+Descarga de Contenido: Guarda el contenido completo de una URL en un archivo.
+
+Reintentos Automáticos: Si la descarga falla (por errores de conexión o tiempo de espera), el script lo intenta de nuevo un número configurable de veces.
+
+Pausas Inteligentes: Introduce pausas entre cada intento de descarga y entre la descarga de diferentes URLs para evitar sobrecargar los servidores.
+
+Simulación de Navegador: Utiliza un User-Agent para simular una petición de navegador web, lo que ayuda a evitar bloqueos por parte de algunos sitios.
+
+Verificación de Contenido: Advierte si el Content-Type de la respuesta no es el esperado (ej. si espera XML pero recibe HTML).
+
+Requisitos
+Asegúrate de tener Python 3.x instalado en tu sistema.
+
+Librerías de Python
+Necesitas instalar la librería requests. Puedes hacerlo abriendo tu terminal o símbolo del sistema y ejecutando el siguiente comando:
+
+pip install requests
+
+Configuración y Uso Detallado
+1. Guarda el Código
+Copia todo el código del script (el que comienza con import requests...) y guárdalo en un archivo con extensión .py, por ejemplo, descargador_web.py.
+
+2. Edita las URLs a Descargar
+Abre el archivo descargador_web.py con un editor de texto (como VS Code, Notepad++, Sublime Text, o incluso el Bloc de Notas).
+
+Busca la sección urls_a_descargar:
+
+if __name__ == "__main__":
+    # Lista de URLs a descargar
+    urls_a_descargar = [
+        "https://www.motorflash.com/coche-de_segunda_mano/volvo-v60-b4_d_core_auto_145_kw_197_cv/ocasion/59715573-es/",
+        # ¡Añade aquí las URLs de las páginas que deseas descargar!
+        # Cada URL debe ir entre comillas dobles y separada por una coma.
+        # Ejemplo:
+        # "https://www.ejemplo.com/pagina1.html",
+        # "https://www.otro-sitio.org/documento.txt",
+    ]
+    # ... (el resto del código)
+
+Reemplaza o añade las URLs de las páginas web que quieres descargar dentro de esta lista. Asegúrate de que cada URL esté entre comillas dobles y que haya una coma , después de cada URL, excepto la última.
+
+3. Ejecuta el Programa
+Abre tu terminal o símbolo del sistema.
+
+Navega a la carpeta donde guardaste descargador_web.py. Puedes usar el comando cd:
+
+cd C:\Ruta\Donde\Guardaste\Tu\Script
+# Ejemplo en Windows: cd C:\Users\TuUsuario\Documentos\MisDescargas
+# Ejemplo en Linux/macOS: cd ~/Documentos/MisDescargas
+
+Ejecuta el script:
+
+python descargador_web.py
+
+Output Esperado
+Mientras se ejecuta, el script imprimirá mensajes en la terminal indicando el progreso:
+
+Te informará en qué directorio se guardarán los archivos.
+
+Para cada URL, te dirá si la descarga fue exitosa o si hubo errores (conexión, tiempo de espera, etc.) y si está reintentando.
+
+Te advertirá si el tipo de contenido descargado no es XML (aunque lo guardará de todas formas).
+
+Verás una línea de guiones (---) separando el proceso de cada URL.
+
+Una vez finalizado, los archivos descargados aparecerán en la misma carpeta donde ejecutaste el script. Los nombres de los archivos seguirán el patrón coches_elia_X.xml (donde X será un número consecutivo).
+
+Consideraciones Importantes
+Uso Responsable: Siempre es recomendable revisar los términos de servicio de los sitios web antes de descargar su contenido de forma automatizada. Algunos sitios pueden tener políticas que prohíban este tipo de actividad.
+
+Tipo de Contenido: Aunque el script guarda los archivos con extensión .xml, el contenido real será el que la URL devuelva (puede ser HTML, texto, etc.).
+
+
+
 Analizador y Evaluador de Fotos de Coches con IA (Google Gemini)
+
 Este proyecto te permite analizar y evaluar automáticamente la calidad de las fotografías de coches extraídas de páginas web, utilizando el poder de la inteligencia artificial de Google Gemini. El script descarga las imágenes, las somete a un análisis detallado como si fueras un experto en fotografía publicitaria de coches, y genera informes con puntos fuertes, áreas de mejora, sugerencias y una puntuación para cada foto, además de un veredicto global para el conjunto de imágenes.
 Características Principales
 Extracción de URLs de Imágenes: Localiza y extrae las URLs de imágenes desde archivos XML/HTML previamente descargados.
